@@ -4,6 +4,7 @@ Author: Juan Mier
 The goal of this project is to download a dataset broken down in many different files. The dataset relates to human activity recognition using smartphones.These files must be formatted by R code according to the principles of tidy data.
 
 Requirements:
+
 1. Download dataset: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 2. Save dataset in your R working folder
@@ -14,8 +15,8 @@ Coding Style:
 I followed parts of the Google R Style Guide https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml
 Variable names are all lower case separating words with dots (variable.name). Despite dots being discouraged by the instructor, to mean they greatly add to readability and less errors as compared to Camel Case, or others.
 
-Steps in the Script:
-Six sections compose the script.
+Steps in the Script:Six sections compose the script.
+
 1. Load dplyr library and download files. I use read.table to read text files, this is straightforward; however, for files that have text/character data we set stringsAsFactors = FALSE.
 
 2. I format the activity.labels file, and use a join function as a form of "lookup" table to map the numerical indices in the y.train/test files with the corresponding activity description. This will be needed later as we want the final output to include the description rather than number, that is, "walking" instead of 1. Importantly, in this step we combine all the data components into one dataset (10299 rows and 564 columns -- 561 columns with smartphone data, and 3 to identify subject, activity and activity description).
